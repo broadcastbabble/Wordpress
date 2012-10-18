@@ -1,0 +1,172 @@
+/*
+Theme Name: Franklin
+Theme URI: http://www.broadcastbabble.com
+Description: A windows 8 inspired blog theme.
+Version: 1.0
+Author: Matthew Doig
+Tags: variable width, widgets
+*/
+
+/************************************************************************************
+RESET
+*************************************************************************************/
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset, figure {
+    margin: 0;
+    padding: 0;
+}
+
+img, fieldset {
+    border: 0;
+}
+
+/* set html5 elements to block */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+    display: block;
+}
+
+h1,h2,h3,h4,h5,h6 { font-weight: 300; color: #4F007D; }
+
+body {
+    background: #FFF;
+    font: 14px Segoe WP,Segoe UI, Arial, Sans-Serif;
+    color: #444;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: #4F007D;
+    font-weight: 300;
+}
+a:hover {
+    text-decoration: none;
+    text-shadow: 0 1px 0 #999;
+}
+
+.right { float: right; }
+.left { float: left; }
+.clear { clear: both; }
+
+.blogcontainer {
+    margin: 36px auto 0 auto;
+    min-width: 1140px;
+    min-height: 600px;
+    width: 1140px
+}
+
+.header { margin-bottom: 48px; }
+.header h1 { font-size: 48px; font-weight: normal; }
+.header h1 a:hover { text-decoration: none; }
+.header h2 { font-size: 14px; line-height: 16px; font-weight: normal; color: #444 }
+
+.blogger { margin: 12px 0px 0px 0px; display: inline-block; }
+.blogger h1 { text-align: right; }
+.blogger h2 { text-align: right; }
+.bloggername { display: inline-block; margin-right: 4px;}
+
+.mentions { margin: 16px 0 82px 0; }
+
+ul.grid-mini, ul.grid-mini a, ul.grid-mini h1, ul.grid-mini h2, ul.grid-mini h3, ul.grid-mini h4, ul.grid-mini h5, ul.grid-mini h6 {
+    color: #FFF;
+    font-weight: normal;
+}
+
+ul.grid-mini li.block-mini { list-style: none; float: left; height: 27px; background: #044B8D; margin: 0 8px 3px 0; position: relative; }
+ul.grid-mini li.block-full-mini { width: 133px; }
+ul.grid-mini li.block-half-mini { width: 19px; }
+ul.grid-mini li.block-new-row { clear: left; }
+ul.grid-mini li.block-last-tile { margin-right: 0px; }
+ul.grid-mini li.bg-purple { background: #8C0396; }
+ul.grid-mini li.bg-ocean { background: #349AEC; }
+.block-full-mini .block-icon { width: 16px; height: 16px; position: absolute; left: 6px; top: 6px;}
+.block-full-mini .app-title { position: absolute; left: 26px; top: 2px; width: 109px; }
+
+ul.grid, ul.grid a, ul.grid h1, ul.grid h2, ul.grid h3, ul.grid h4, ul.grid h5, ul.grid h6 {
+    color: #FFF;
+    font-weight: normal;
+}
+
+ul.grid li.block { list-style: none; float: left; height: 139px; background: #044B8D; margin: 0 8px 8px 0; position: relative; }
+ul.grid li.block-full { width: 285px; }
+ul.grid li.block-half { width: 139px; }
+ul.grid li.block-new-row { clear: left; }
+ul.grid li.block-last-tile { margin-right: 0px; }
+ul.grid li.block-click { cursor: hand; cursor: pointer; }
+ul.grid li.bg-teal { background: #45A4AC; }
+ul.grid li.bg-green { background: #96B232; }
+ul.grid li.bg-purple { background: #494AA8; }
+ul.grid li.bg-magenta { background: #741763; }
+ul.grid li.bg-orange { background: #E2A01A; }
+ul.grid li.bg-ocean { background: #349AEC; }
+ul.grid li.bg-azure { background: #1BA1E2; }
+ul.grid li.bg-lagoon { background: #006699; }
+ul.grid li.bg-volunteer { background: #FC9E12; }
+ul.grid li.bg-white { background: #FFF; }
+
+.block-full .block-background { position: absolute; width: 285px; height: 139px; overflow: hidden; }
+.block-full .block-background img { width: 285px; }
+.block-full .block-content-bottom { position: absolute; bottom: 0; width: 285px; height: 39px; background: #CD432D; }
+.block-full .block-content-bottom .inner { margin: 1px 12px; overflow: hidden; }
+
+.block-full .block-content-full { margin: 12px; overflow: hidden; }
+.block-full .block-content-full .date { float: left; width: 72px; margin-right: 8px; }
+.block-full .block-content-full .date .date-day { font-size: 60px; line-height: 64px; }
+.block-full .block-content-full .date .date-month { text-transform: uppercase; }
+.block-full .block-content-full .content { height: 100px; overflow: hidden; }
+.block-full .footnote { position: absolute; left: 12px; bottom: 12px; font-size: 14px; }
+.block-full .block-icon { width: 64px; height: 64px; position: absolute; left: 36px; top: 36px;}
+.block-full .app-title { position: absolute; left: 128px; top: 40px; font-size: 40px; width: 160px; }
+.block-full .block-footnote { position: absolute; bottom: 0px; height:24px; padding: 4px 12px; width: 261px; font-size: 14px; background: #CD432D; }
+.block-full .block-content-full h2 { margin-bottom: 8px; }
+
+.block-half .block-icon { width: 64px; height: 64px; margin: 36px auto 0; }
+.block-half .footnote { position: absolute; left: 12px; bottom: 12px; font-size: 14px; }
+
+.posts { min-width: 635px; width: 834px; }
+.post { text-align: left; }
+.post-title { font-size: 16px; width: 248px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+.post-sub-title { font-size: 12px; width: 248px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+.post-comments { position: absolute; right: 12px; bottom: 8px; }
+.postinfo {	font-size: 14px; font-weight: 300; color: #aaaaaa; margin: 0 0 16px 0; }
+.postdate {	font-weight: 300; }
+.postdata { text-align: justify; }
+
+ul.list-link li { padding-left: 24px; line-height: 20px; background: url(content/list-bullet.png) no-repeat 8px center; }
+
+.footer ol, .footer ul { list-style: none; }
+.footer { padding: 50px 0 0 0; }
+.footer .section { margin: 0 50px 0 0; }
+.footer .section h2 { margin: 0 0 16px 0; font-weight: 300; }
+.footer .section a { margin: 0 80px 0 0; }
+
+input[type="button"], input[type="submit"] {
+    border: 2px solid #444;
+	background: #FFF;
+	font-weight: bold;
+	color: #444;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover {
+	border: 2px solid #444;
+	background: #FFF;
+	font-weight: bold;
+	color: #444;
+}
+
+input[type="button"]:active, input[type="submit"]:active {
+	border: 2px solid #444;
+	background: #444;
+	font-weight: bold;
+	color: #FFF;
+}
+
+.block-full h3 { z-index: 6 }
+#slideshow img { display: none }
+#slideshow img.first { display: block }
+#twitter_update_list li { display: none }
+#twitter_update_list li.first { display: block }
+#google_calendar_list li { display: none }
+#google_calendar_list li.first { display: block }
