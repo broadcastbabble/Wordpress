@@ -125,7 +125,7 @@ ul.grid li.bg-white { background: #FFF; }
 .block-half .block-icon { width: 64px; height: 64px; margin: 36px auto 0; }
 .block-half .footnote { position: absolute; left: 12px; bottom: 12px; font-size: 14px; }
 
-.posts { min-width: 635px; width: 834px; }
+.posts { min-width: 635px; width: 813px; }
 .post { text-align: left; }
 .post-title { font-size: 16px; width: 248px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
 .post-sub-title { font-size: 12px; width: 248px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
