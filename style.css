@@ -75,14 +75,16 @@ ul.grid-mini, ul.grid-mini a, ul.grid-mini h1, ul.grid-mini h2, ul.grid-mini h3,
 }
 
 ul.grid-mini li.block-mini { list-style: none; float: left; height: 27px; background: #044B8D; margin: 0 8px 3px 0; position: relative; }
-ul.grid-mini li.block-full-mini { width: 133px; }
+ul.grid-mini li.block-full-mini { width: 139px; }
 ul.grid-mini li.block-half-mini { width: 19px; }
 ul.grid-mini li.block-new-row { clear: left; }
 ul.grid-mini li.block-last-tile { margin-right: 0px; }
 ul.grid-mini li.bg-purple { background: #8C0396; }
 ul.grid-mini li.bg-ocean { background: #349AEC; }
+ul.grid-mini li.bg-volunteer { background: #FC9E12; }
+ul.grid-mini li.bg-reddit { background: #C5E1F4; }
 .block-full-mini .block-icon { width: 16px; height: 16px; position: absolute; left: 6px; top: 6px;}
-.block-full-mini .app-title { position: absolute; left: 26px; top: 2px; width: 109px; }
+.block-full-mini .app-title { position: absolute; left: 26px; margin: 2px; width: 109px; }
 
 ul.grid, ul.grid a, ul.grid h1, ul.grid h2, ul.grid h3, ul.grid h4, ul.grid h5, ul.grid h6 {
     color: #FFF;

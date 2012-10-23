@@ -28,14 +28,26 @@ get_header();
 	            <div class="block-icon">
 		            <a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/content/comments-16.png" /></a>
 	            </div>
-	            <h3 class="app-title"><a href="#"><?php comments_popup_link(__('No Comments'), __('1 Comment'), __('% Comments')); ?></a></h3>
+	            <h3 class="app-title"><a href="#"><?php comments_popup_link(__('Comment'), __('1 Comment'), __('% Comments')); ?></a></h3>
             </li>
             <li class="block-mini block-full-mini bg-ocean">
 	            <div class="block-icon">
 		            <a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/content/twitter-16.png" /></a>
 	            </div>
-	            <h3 class="app-title"><a href="" class="twitter-share-button-2 left" data-url="<?php the_permalink() ?>" data-text="<?php the_title(); ?>">0 mentions</a></h3>
+	            <h3 class="app-title"><a href="" class="twitter-share-button-2 left" data-url="<?php the_permalink() ?>" data-text="<?php the_title(); ?>">Mention</a></h3>
             </li>
+          <li class="block-mini block-full-mini bg-reddit">
+            <div class="block-icon">
+              <a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/content/reddit-16.png" /></a>
+            </div>
+            <h3 class="app-title"><a href="" class="reddit-share-button left" data-url="<?php the_permalink() ?>" data-text="<?php the_title(); ?>">Submit</a></h3>
+          </li>
+           <li class="block-mini block-full-mini bg-volunteer">
+              <div class="block-icon">
+                <a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/content/rss-16.png" /></a>
+              </div>
+              <h3 class="app-title"><a href="http://feeds.feedburner.com/broadcastbabble" target="_blank">Subscribe</a></h3>
+           </li>
         </ul>
     </div>
 

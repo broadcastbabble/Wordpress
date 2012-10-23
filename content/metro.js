@@ -18,6 +18,7 @@ Metro = function () {
 	this._twitterFollowerCountClass = ".twitter-followers .count";
 	this._twitterShareClass = ".twitter-share-button-2";
 	this._rssSubscriberCountClass = ".rss-subscribers .count";
+	this._redditShareClass = ".reddit-share-button";
 };
 
 Metro.prototype = {
@@ -36,6 +37,9 @@ Metro.prototype = {
 
 		$(this._twitterShareClass).each(function () {
 			metro._loadTweetCount($(this));
+		});
+		$(this._redditShareClass).each(function () {
+		    metro._loadRedditScore($(this));
 		});
 	},
 
@@ -73,20 +77,59 @@ Metro.prototype = {
 
 		$.getJSON(url, function (data) {
 
-			var qualifier = "mentions";
+		    if (data.count > 0) {
+		        var qualifier = "Mentions";
 
-			if (data.count > 99)
-				qualifier = "tweets";
+		        if (data.count > 99)
+		            qualifier = "Tweets";
 
-			if (data.count == 1)
-				qualifier = "mention";
+		        if (data.count == 1)
+		            qualifier = "Mention";
 
-			element.attr("href", "http://twitter.com/share?url=" + loc + "&text=" + text + "&via=" + metro._accountName);
-			element.attr("target", "_blank");
+		        element.attr("href", "http://twitter.com/share?url=" + loc + "&text=" + text + "&via=" + metro._accountName);
+		        element.attr("target", "_blank");
 
-			element.html("<span>" + data.count + " " + qualifier + "</span>");
+		        element.html("<span>" + data.count + " " + qualifier + "</span>");
+		    } else {
+		        element.attr("href", "http://twitter.com/share?url=" + loc + "&text=" + text + "&via=" + metro._accountName);
+		        element.attr("target", "_blank");
+
+		        element.html("<span>Mention</span>");
+		    }
 		});
+	},
+
+	_loadRedditScore: function (element) {
+
+        var loc = element.attr("data-url");
+        var text = element.attr("data-text");
+
+        var url = "http://www.reddit.com/api/info.json?url=" + loc + "&callback=?";
+
+        var metro = this;
+
+        $.getJSON(url, function (data) {
+
+            if (data.children.count() > 0) {
+                first_child = data.children[0];
+                var qualifier = "Points";
+
+                if (data.count == 1)
+                    qualifier = "Point";
+
+                element.attr("href", "http://twitter.com/share?url=" + loc + "&text=" + text + "&via=" + metro._accountName);
+                element.attr("target", "_blank");
+
+                element.html("<span>" + first_child.score + " " + qualifier + "</span>");
+            } else {
+                element.attr("href", "http://reddit.com/submit?url=" + loc + "&title=" + text);
+                element.attr("target", "_blank");
+
+                element.html("<span>Submit</span>");
+            }
+        });
 	}
+
 };
 
 var m = new Metro();

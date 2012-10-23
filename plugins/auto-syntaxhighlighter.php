@@ -67,6 +67,7 @@ class AutoSyntaxHighlighter {
 			array('xml xhtml xslt html', 'shBrushXml-min.js'),
 		));
 		add_filter('the_content', array($this, 'getContentLang'));
+    add_filter('the_content', array($this, 'escapeCodeBetweenPreTags'));
 		add_action('wp_footer', array($this,'outputScripts'));
 	}
 
@@ -85,7 +86,17 @@ class AutoSyntaxHighlighter {
 		}
 		return $content;
 	}
-
+  
+  public function escapeCodeBetweenPreTags($content){
+    $replace = array('<' => '&lt', '>' => '&gt');
+    $do = preg_match_all('/<pre([^>]*)>(.*?)<\/pre>/s', $content, $matches);
+    foreach ($matches[2] as $value) {
+         $replace_value = str_replace(array_keys($replace), $replace, $value);
+         $content = str_replace($value, $replace_value, $content); 
+    }
+		return $content;
+	}
+  
 	public function outputScripts(){
 		if (empty($this->_post_brushes)) return;
 		echo "<!-- Auto SyntaxHighlighter -->\n";
