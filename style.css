@@ -84,7 +84,9 @@ ul.grid-mini li.bg-ocean { background: #349AEC; }
 ul.grid-mini li.bg-volunteer { background: #FC9E12; }
 ul.grid-mini li.bg-reddit { background: #C5E1F4; }
 .block-full-mini .block-icon { width: 16px; height: 16px; position: absolute; left: 6px; top: 6px;}
+.block-full-mini .reddit_button img { position: absolute; left: -22px; top: 2px;}
 .block-full-mini .app-title { position: absolute; left: 26px; margin: 2px; width: 109px; }
+.block-full-mini .reddit_button { position: absolute; left: 26px; top: 2px; width: 109px; margin-top: 2px; }
 
 ul.grid, ul.grid a, ul.grid h1, ul.grid h2, ul.grid h3, ul.grid h4, ul.grid h5, ul.grid h6 {
     color: #FFF;

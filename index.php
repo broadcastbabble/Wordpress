@@ -37,10 +37,7 @@ get_header();
 	            <h3 class="app-title"><a href="" class="twitter-share-button-2 left" data-url="<?php the_permalink() ?>" data-text="<?php the_title(); ?>">Mention</a></h3>
             </li>
           <li class="block-mini block-full-mini bg-reddit">
-            <div class="block-icon">
-              <a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/content/reddit-16.png" /></a>
-            </div>
-            <h3 class="app-title"><a href="" class="reddit-share-button left" data-url="<?php the_permalink() ?>" data-text="<?php the_title(); ?>">Submit</a></h3>
+            <script type="text/javascript" src="http://www.reddit.com/buttonlite.js?i=4&styled=off&url=<?php the_permalink() ?>&newwindow=1"></script>
           </li>
            <li class="block-mini block-full-mini bg-volunteer">
               <div class="block-icon">
