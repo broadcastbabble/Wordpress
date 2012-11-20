@@ -51,10 +51,11 @@ a:hover {
 .clear { clear: both; }
 
 .blogcontainer {
-    margin: 36px auto 0 auto;
+    margin: 12px auto 0 auto;
     min-width: 1140px;
     min-height: 600px;
-    width: 1140px
+    width: 1140px;
+    padding: 0px 10px 0px 10px
 }
 
 .header { margin-bottom: 48px; }
@@ -174,3 +175,33 @@ input[type="button"]:active, input[type="submit"]:active {
 #twitter_update_list li.first { display: block }
 #google_calendar_list li { display: none }
 #google_calendar_list li.first { display: block }
+
+/* IPad Landscape */
+@media only screen and (max-width: 1024px) {
+
+    .blogger { display: none; }
+    .header { margin-bottom: 36px; }
+    .header h1 { font-size: 36px; font-weight: normal; }
+    .sidebarcontainer { display: none; }
+    .posts { min-width: 960px; width: 960px; }
+}
+
+/* IPad Portrait */
+@media only screen and (max-width: 768px) {
+
+    .blogger { display: none; }
+    .header { margin-bottom: 36px; }
+    .header h1 { font-size: 36px; font-weight: normal; }
+    .sidebarcontainer { display: none; }
+    .posts { min-width: 717px; width: 717px; }
+}
+
+/* Mobile Assume 600px */
+@media only screen and (max-width: 767px) {
+
+    .blogger { display: none; }
+    .header { margin-bottom: 36px; }
+    .header h1 { font-size: 36px; font-weight: normal; }
+    .sidebarcontainer { display: none; }
+    .posts { min-width: 550px; width: 550px; }
+}
